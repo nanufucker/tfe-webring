@@ -37,7 +37,7 @@
 
 	</div>`;
 
-	class WebRing extends HTMLElement {
+	class WebRing_TFE extends HTMLElement {
 	  connectedCallback() {
 	    this.attachShadow({ mode: "open" });
 	    this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -56,10 +56,11 @@
 
 	        // Get previous and next sites from the JSON file
 	        	let prevSiteIndex = matchedSiteIndex - 1;
-	        	if (prevSiteIndex === -1) prevSiteIndex = sites.length - 1;
+	        	if (prevSiteIndex === -1) prevSiteIndex = sites.length - 2;
 
 	        	let nextSiteIndex = matchedSiteIndex + 1;
-	        	if (nextSiteIndex > sites.length) nextSiteIndex = 0;
+	        	if (nextSiteIndex >= sites.length - 1) nextSiteIndex = 0;
+	        	
 
 	        	const randomSiteIndex = this.getRandomInt(0, sites.length - 1);
 
@@ -89,5 +90,5 @@
 	  	}
 	}
 
-	window.customElements.define("webring-css", WebRing);
+	window.customElements.define("webring-css", WebRing_TFE);
 </script>
