@@ -1,4 +1,5 @@
 # tfe-webring
+WARNING: SOON TO BE DEPRECATED
 A webring for my pals
 
 ## Installation
